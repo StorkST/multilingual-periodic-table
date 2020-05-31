@@ -1,0 +1,648 @@
+\newif\ifen
+\newif\iffr
+\newif\ifru
+\csname\target true\endcsname
+
+\def\Zkey{Z}
+\def\enegkey{$\chi$}
+
+% ENGLISH
+\ifen
+\def\doctitle{Periodic table of elements}
+\def\docsubtitle{Mendeleev's table}
+
+%% Element descr
+\def\sskey{ss}
+\def\Sykey{Sy}
+\def\Namekey{Name}
+\def\sawkey{saw}
+
+\def\Zvalue{atomic number}
+\def\enegvalue{electronegativity}
+\def\ssvalue{subshell}
+\def\Syvalue{symbol}
+\def\Namevalue{element name}
+\def\sawvalue{standard atomic weight}
+
+%% Legend
+\def\alkali{Alkali Metal}
+\def\alkaline{Alkaline Earth Metal}
+\def\metal{Metal}
+\def\metalloid{Metalloid}
+\def\nonmetal{Non-metal}
+\def\halogen{Halogen}
+\def\noblegas{Noble Gas}
+\def\lanthaActini{Lanthanide/Actinide}
+
+%% Bottom
+\def\source{Standard atomic weights taken from the Commission on Isotopic Abundances and Atomic Weights (ciaaw.org/atomic-weights.htm).}
+\def\asterisk{An asterisk (*) next to a subshell indicates an anomalous (Aufbau rule-breaking) ground state electron configuration.}
+
+%% Signature
+\def\basedon{Based on Ivan Griffin's and Paul Danese's Periodic tables of elements.}
+
+%% Group 1 - IA
+\def\H{Hydrogen}
+\def\Li{Lithium}
+\def\Na{Sodium}
+\def\K{Potassium}
+\def\Rb{Rubidium}
+\def\Cs{Cesium}
+\def\Fr{Francium}
+	
+%% Group 2 - IIA
+\def\Be{Beryllium}
+\def\Mg{Magnesium} 
+\def\Ca{Calcium}
+\def\Sr{Strontium} 
+\def\Ba{Barium}
+\def\Ra{Radium}
+
+%% Group 3 - IIIB
+\def\Sc{Scandium}
+\def\Y{Yttrium}
+\def\LaLu{Lanthanides}
+\def\AcLr{Actinides}
+
+
+%% Group 4 - IVB
+\def\Ti{Titanium}
+\def\Zr{Zirconium}
+\def\Hf{Hafnium}
+\def\Rf{Rutherfordium}
+
+
+%% Group 5 - VB
+\def\V{Vanadium} 
+\def\Nb{Niobium} 
+\def\Ta{Tantalum}
+\def\Db{Dubnium} 
+
+
+%% Group 6 - VIB
+\def\Cr{Chromium}
+\def\Mo{Molybdenum}
+\def\W{Tungsten}
+\def\Sg{Seaborgium}
+
+
+%% Group 7 - VIIB
+\def\Mn{Manganese}
+\def\Tc{Technetium}
+\def\Re{Rhenium} 
+\def\Bh{Bohrium} 
+
+
+%% Group 8 - VIIIB
+\def\Fe{Iron} 
+\def\Ru{Ruthenium} 
+\def\Os{Osmium} 
+\def\Hs{Hassium} 
+ 
+ 
+%% Group 9 - VIIIB
+\def\Co{Cobalt} 
+\def\Rh{Rhodium}
+\def\Ir{Iridium} 
+\def\Mt{Meitnerium}
+ 
+ 
+%% Group 10 - VIIIB
+\def\Ni{Nickel} 
+\def\Pd{Palladium} 
+\def\Pt{Platinum} 
+\def\Ds{Darmstadtium}
+ 
+ 
+%% Group 11 - IB
+\def\Cu{Copper} 
+\def\Ag{Silver} 
+\def\Au{Gold} 
+\def\Rg{Roentgenium} 
+ 
+ 
+%% Group 12 - IIB
+\def\Zn{Zinc} 
+\def\Cd{Cadmium} 
+\def\Hg{Mercury} 
+\def\Cn{Copernicium}
+ 
+ 
+%% Group 13 - IIIA
+\def\Ga{Gallium} 
+\def\Al{Aluminium}
+\def\B{Boron} 
+\def\In{Indium} 
+\def\Tl{Thallium}
+\def\Nh{Nihonium}
+ 
+ 
+%% Group 14 - IVA
+\def\C{Carbon} 
+\def\Si{Silicon} 
+\def\Ge{Germanium}
+\def\Sn{Tin}
+\def\Pb{Lead} 
+\def\Fl{Flerovium}
+
+ 
+%% Group 15 - VA
+\def\N{Nitrogen} 
+\def\P{Phosphorus}
+\def\As{Arsenic}
+\def\Sb{Antimony}
+\def\Bi{Bismuth} 
+\def\Mc{Moscovium} 
+ 
+ 
+%% Group 16 - VIA
+\def\O{Oxygen} 
+\def\S{Sulfur} 
+\def\Se{Selenium} 
+\def\Te{Tellurium}
+\def\Po{Polonium} 
+\def\Lv{Livermorium}
+ 
+ 
+%% Group 17 - VIIA
+\def\F{Fluorine} 
+\def\Cl{Chlorine} 
+\def\Br{Bromine}
+\def\I{Iodine} 
+\def\At{Astatine} 
+\def\Ts{Tennessine}
+ 
+ 
+%% Group 18 - VIIIA
+\def\La{Lanthanum}
+\def\Ne{Neon}
+\def\He{Helium} 
+\def\Ar{Argon} 
+\def\Kr{Krypton} 
+\def\Xe{Xenon} 
+\def\Rn{Radon} 
+\def\Og{Oganesson} 
+
+
+%% Lanthanide
+\def\Ce{Cerium}
+\def\Pr{Praseodymium}
+\def\Nd{Neodymium}
+\def\Pm{Promethium}
+\def\Sm{Samarium}
+\def\Eu{Europium}
+\def\Gd{Gadolinium}
+\def\Tb{Terbium}
+\def\Dy{Dysprosium}
+\def\Ho{Holmium}
+\def\Er{Erbium}
+\def\Tm{Thulium}
+\def\Yb{Ytterbium}
+\def\Lu{Lutetium}
+
+
+%% Actinide
+\def\Ac{Actinium}
+\def\Th{Thorium}
+\def\Pa{Protactinium}
+\def\U{Uranium}
+\def\Np{Neptunium}
+\def\Pu{Plutonium}
+\def\Am{Americium}
+\def\Cm{Curium}
+\def\Bk{Berkelium}
+\def\Cf{Californium}
+\def\Es{Einsteinium}
+\def\Fm{Fermium}
+\def\Md{Mendelevium}
+\def\No{Nobelium}
+\def\Lr{Lawrencium}
+
+\fi
+
+% FRENCH
+\iffr
+\def\doctitle{Tableau périodique des éléments}
+\def\docsubtitle{Tableau de Mendeleïev}
+
+%% Element descr
+\def\sskey{sc}
+\def\Sykey{Sy}
+\def\Namekey{Nom}
+\def\sawkey{pas}
+
+\def\Zvalue{numéro atomique}
+\def\enegvalue{électronégativité}
+\def\ssvalue{sous-couche électronique}
+\def\Syvalue{symbole}
+\def\Namevalue{nom de l'élément}
+\def\sawvalue{poids atomique standard}
+
+%% Legend
+\def\alkali{Métal alcalin}
+\def\alkaline{Métal alcalino-terreux}
+\def\metal{Métal}
+\def\metalloid{Métalloïde}
+\def\nonmetal{Non-métal}
+\def\halogen{Halogène}
+\def\noblegas{Gaz noble}
+\def\lanthaActini{Lanthanide/Actinide}
+
+%% Bottom
+\def\source{Les poids atomiques standards sont issus de la Commission on Isotopic Abundances and Atomic Weights (ciaaw.org/atomic-weights.htm).}
+\def\asterisk{Une astérisque (*) apposée à une sous-couche électronique indique une exception (au principe d'Aufbau) dans la configuration des électrons à l'état fondamental.}
+
+%% Signature
+\def\basedon{Basé sur les Tableaux de Ivan Griffin et Paul Danese.}
+
+%% Group 1 - IA
+\def\H{Hydrogène}
+\def\Li{Lithium}
+\def\Na{Sodium}
+\def\K{Potassium}
+\def\Rb{Rubidium}
+\def\Cs{Césium}
+\def\Fr{Francium}
+	
+%% Group 2 - IIA
+\def\Be{Béryllium}
+\def\Mg{Magnésium} 
+\def\Ca{Calcium}
+\def\Sr{Strontium} 
+\def\Ba{Baryum}
+\def\Ra{Radium}
+
+%% Group 3 - IIIB
+\def\Sc{Scandium}
+\def\Y{Yttrium}
+\def\LaLu{Lanthanides}
+\def\AcLr{Actinides}
+
+
+%% Group 4 - IVB
+\def\Ti{Titane}
+\def\Zr{Zirconium}
+\def\Hf{Hafnium}
+\def\Rf{Rutherfordium}
+
+
+%% Group 5 - VB
+\def\V{Vanadium} 
+\def\Nb{Niobium} 
+\def\Ta{Tantale}
+\def\Db{Dubnium} 
+
+
+%% Group 6 - VIB
+\def\Cr{Chrome}
+\def\Mo{Molybdène}
+\def\W{Tungstène}
+\def\Sg{Seaborgium}
+
+
+%% Group 7 - VIIB
+\def\Mn{Manganèse}
+\def\Tc{Technétium}
+\def\Re{Rhénium} 
+\def\Bh{Bohrium} 
+
+
+%% Group 8 - VIIIB
+\def\Fe{Fer} 
+\def\Ru{Ruthénium} 
+\def\Os{Osmium} 
+\def\Hs{Hassium} 
+ 
+ 
+%% Group 9 - VIIIB
+\def\Co{Cobalt} 
+\def\Rh{Rhodium}
+\def\Ir{Iridium} 
+\def\Mt{Meitnérium}
+ 
+ 
+%% Group 10 - VIIIB
+\def\Ni{Nickel} 
+\def\Pd{Palladium} 
+\def\Pt{Platine} 
+\def\Ds{Darmstadtium}
+ 
+ 
+%% Group 11 - IB
+\def\Cu{Cuivre} 
+\def\Ag{Argent} 
+\def\Au{Or} 
+\def\Rg{Roentgenium} 
+ 
+ 
+%% Group 12 - IIB
+\def\Zn{Zinc} 
+\def\Cd{Cadmium} 
+\def\Hg{Mercure} 
+\def\Cn{Copernicium}
+ 
+ 
+%% Group 13 - IIIA
+\def\B{Bore}
+\def\Al{Aluminium}
+\def\Ga{Gallium}
+\def\In{Indium} 
+\def\Tl{Thallium}
+\def\Nh{Nihonium}
+ 
+ 
+%% Group 14 - IVA
+\def\C{Carbone}
+\def\Si{Silicium}
+\def\Ge{Germanium}
+\def\Sn{Étain}
+\def\Pb{Plomb} 
+\def\Fl{Flérovium}
+
+ 
+%% Group 15 - VA
+\def\N{Azote} 
+\def\P{Phosphore}
+\def\As{Arsenic}
+\def\Sb{Antimoine}
+\def\Bi{Bismuth} 
+\def\Mc{Moscovium} 
+ 
+ 
+%% Group 16 - VIA
+\def\O{Oxygène}
+\def\S{Soufre}
+\def\Se{Sélénium}
+\def\Te{Tellure}
+\def\Po{Polonium}
+\def\Lv{Livermorium}
+ 
+ 
+%% Group 17 - VIIA
+\def\F{Fluor} 
+\def\Cl{Chlore} 
+\def\Br{Brome}
+\def\I{Iode} 
+\def\At{Astate} 
+\def\Ts{Tennesse}
+ 
+ 
+%% Group 18 - VIIIA
+\def\He{Hélium} 
+\def\Ne{Néon}
+\def\Ar{Argon} 
+\def\Kr{Krypton} 
+\def\Xe{Xénon} 
+\def\Rn{Radon}
+\def\Og{Oganesson} 
+
+
+%% Lanthanide
+\def\La{Lanthane}
+\def\Ce{Cérium}
+\def\Pr{Praséodyme}
+\def\Nd{Néodyme}
+\def\Pm{Prométhium}
+\def\Sm{Samarium}
+\def\Eu{Europium}
+\def\Gd{Gadolinium}
+\def\Tb{Terbium}
+\def\Dy{Dysprosium}
+\def\Ho{Holmium}
+\def\Er{Erbium}
+\def\Tm{Thulium}
+\def\Yb{Ytterbium}
+\def\Lu{Lutécium}
+
+
+%% Actinide
+\def\Ac{Actinium}
+\def\Th{Thorium}
+\def\Pa{Protactinium}
+\def\U{Uranium}
+\def\Np{Neptunium}
+\def\Pu{Plutonium}
+\def\Am{Américium}
+\def\Cm{Curium}
+\def\Bk{Berkélium}
+\def\Cf{Californium}
+\def\Es{Einsteinium}
+\def\Fm{Fermium}
+\def\Md{Mendélévium}
+\def\No{Nobélium}
+\def\Lr{Lawrencium}
+\fi
+
+% RUSSIAN
+\ifru
+\def\doctitle{Периодическая система химических элементов}
+\def\docsubtitle{Таблица Менделеева}
+
+%% Element descr
+\def\sskey{по}
+\def\Sykey{Си}
+\def\Namekey{название}
+\def\sawkey{сав}
+
+\def\Zvalue{зарядовое число}
+\def\enegvalue{электроотрицательность}
+\def\ssvalue{подуровень оболочки}
+\def\Syvalue{символ}
+\def\Namevalue{название элемента}
+\def\sawvalue{стандартный атомный вес}
+
+%% Legend
+\def\alkali{Щелочные металлы}
+\def\alkaline{Щёлочноземельные металлы}
+\def\metal{Металлы}
+\def\metalloid{Полуметаллы}
+\def\nonmetal{Неметаллы}
+\def\halogen{Галогены}
+\def\noblegas{Благородные газы}
+\def\lanthaActini{Лантаноиды/Актиноиды}
+
+%% Bottom
+\def\source{Стандартные атомные веса исходят от Commission on Isotopic Abundances and Atomic Weights (ciaaw.org/atomic-weights.htm).}
+\def\asterisk{Звездочка (*) рядом с подуровнем оболочки указывает на исключение (из принципа Aufbau) в конфигурации основного состояния электронов.}
+
+%% Signature
+\def\basedon{Основывается на таблицых от Ivan Griffin и Paul Danese.}
+
+
+%% Group 1 - IA
+\def\H{Водород}
+\def\Li{Литий}
+\def\Na{Натрий}
+\def\K{Калий}
+\def\Rb{Рубидий}
+\def\Cs{Цезий}
+\def\Fr{Франций}
+	
+%% Group 2 - IIA
+\def\Be{Бериллий}
+\def\Mg{Магний} 
+\def\Ca{Кальций}
+\def\Sr{Стронций} 
+\def\Ba{Барий}
+\def\Ra{Радий}
+
+%% Group 3 - IIIB
+\def\Sc{Скандий}
+\def\Y{Иттрий}
+\def\LaLu{Лантаноиды}
+\def\AcLr{Актиноиды}
+
+
+%% Group 4 - IVB
+\def\Ti{Титан}
+\def\Zr{Цирконий}
+\def\Hf{Гафний}
+\def\Rf{Резерфордий}
+
+
+%% Group 5 - VB
+\def\V{Ванадий}
+\def\Nb{Ниобий}
+\def\Ta{Тантал}
+\def\Db{Дубний}
+
+
+%% Group 6 - VIB
+\def\Cr{Хром}
+\def\Mo{Молибден}
+\def\W{Вольфрам}
+\def\Sg{Сиборгий}
+
+
+%% Group 7 - VIIB
+\def\Mn{Марганец}
+\def\Tc{Технеций}
+\def\Re{Рений}
+\def\Bh{Борий}
+
+
+%% Group 8 - VIIIB
+\def\Fe{Железо}
+\def\Ru{Рутений}
+\def\Os{Осмий}
+\def\Hs{Хассий}
+
+
+%% Group 9 - VIIIB
+\def\Co{Кобальт}
+\def\Rh{Родий}
+\def\Ir{Иридий}
+\def\Mt{Мейтнерий}
+
+
+%% Group 10 - VIIIB
+\def\Ni{Никель}
+\def\Pd{Палладий}
+\def\Pt{Платина}
+\def\Ds{Драмштадтий}
+
+
+%% Group 11 - IB
+\def\Cu{Медь}
+\def\Ag{Серебро}
+\def\Au{Золото}
+\def\Rg{Рентгений}
+
+
+%% Group 12 - IIB
+\def\Zn{Цинк}
+\def\Cd{Кадмий}
+\def\Hg{Ртуть}
+\def\Cn{Коперниций}
+
+
+%% Group 13 - IIIA
+\def\B{Бор}
+\def\Al{Алюминий}
+\def\Ga{Галлий}
+\def\In{Индий}
+\def\Tl{Таллий}
+\def\Nh{Нихоний}
+
+
+%% Group 14 - IVA
+\def\C{Углерод}
+\def\Si{Кремний}
+\def\Ge{Германий}
+\def\Sn{Олово}
+\def\Pb{Свинец}
+\def\Fl{Флеровий}
+
+
+%% Group 15 - VA
+\def\N{Азот}
+\def\P{Фосфор}
+\def\As{Мышьяк}
+\def\Sb{Сурьма}
+\def\Bi{Висмут}
+\def\Mc{Московий}
+
+
+%% Group 16 - VIA
+\def\O{Кислород}
+\def\S{Сера}
+\def\Se{Селен}
+\def\Te{Теллур}
+\def\Po{Полоний}
+\def\Lv{Ливерморий}
+
+
+%% Group 17 - VIIA
+\def\F{Фтор}
+\def\Cl{Хлор}
+\def\Br{Бром}
+\def\I{Йод}
+\def\At{Астат}
+\def\Ts{Теннессин}
+
+
+%% Group 18 - VIIIA
+\def\He{Гелий}
+\def\Ne{Неон}
+\def\Ar{Аргон}
+\def\Kr{Криптон}
+\def\Xe{Ксенон}
+\def\Rn{Радон}
+\def\Og{Оганесон}
+
+
+%% Lanthanide
+\def\La{Лантан}
+\def\Ce{Церий}
+\def\Pr{Празеодим}
+\def\Nd{Неодим}
+\def\Pm{Прометий}
+\def\Sm{Самарий}
+\def\Eu{Европий}
+\def\Gd{Гадолиний}
+\def\Tb{Тербий}
+\def\Dy{Диспрозий}
+\def\Ho{Гольмий}
+\def\Er{Эрбий}
+\def\Tm{Тулий}
+\def\Yb{Иттербий}
+\def\Lu{Лютеций}
+
+
+%% Actinide
+\def\Ac{Актиний}
+\def\Th{Торий}
+\def\Pa{Проактиний}
+\def\U{Уран}
+\def\Np{Нептуний}
+\def\Pu{Плутоний}
+\def\Am{Америций}
+\def\Cm{Кюрий}
+\def\Bk{Берклий}
+\def\Cf{Калифорний}
+\def\Es{Энштейний}
+\def\Fm{Фермий}
+\def\Md{Менделевий}
+\def\No{Нобелий}
+\def\Lr{Лоуренсий}
+\fi
