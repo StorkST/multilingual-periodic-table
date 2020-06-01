@@ -1,31 +1,4 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Copyright 2009 Ivan Griffin
-%  Copyright 2015 Paul Danese (pdanese@goodwin.edu, pdanese@fdable.com)
-% Adapted from Ivan Griffin's work (http://www.texample.net/tikz/examples/author/ivan-griffin/)
-% I have no idea how copyright works. Hopefully, I'm not breaking any rules / laws or stepping on any toes. 
-% If I am breaking rules / laws / toes, it was unintentional.
-% This work may be distributed and/or modified under the
-% conditions of the LaTeX Project Public License, either version 1.3
-% of this license or (at your option) any later version.
-% The latest version of this license is in
-%   http://www.latex-project.org/lppl.txt
-% and version 1.3 or later is part of all distributions of LaTeX
-% version 2005/12/01 or later.
-%
-% This work has the LPPL maintenance status `maintained'.
-% 
-% The Current Maintainer of this work is Paul Danese
-%
-% This work consists of the files periodic_table.tex
-
-%Description
-%Created 2009-12-08 by Ivan Griffin.  Last updated: 2010-01-11
-% Modified 2015-10-24 by Paul Danese
-%Thanks to Jerome. Thanks to Ivan.
-%-------------------------------------------------------------
-%\RequirePackage{fix-cm}
 \documentclass[9pt]{scrartcl}
-%letterpaper by default, a4paper optional
 \usepackage[
   a4paper,
   landscape,
@@ -37,23 +10,20 @@
   ]{geometry}
 \usepackage{tikz}
 \usepackage{hyperref}
-\usepackage[english,french,russian]{babel}
 \usetikzlibrary{shapes,calc}
-\usepackage{xstring,xifthen}
-% wanted to use the standard latex serif font, which I like.
-% also wanted to avoid excessive coloring of different element groups (e.g., noble gases, alkalai metals, etc.)
+\usepackage[english,french,russian]{babel}
 
 \input{languages.tex}
 
 \usepackage{ifthen}
 \newif\ifextra
 \ifthenelse{\equal{\withExtra}{yes}}
-{
-  \extratrue
-}
-{
-  \extrafalse
-}
+  {
+    \extratrue
+  }
+  {
+    \extrafalse
+  }
 
 \begin{document}
 	\pagenumbering{gobble} % suppress page numbering here
@@ -85,14 +55,16 @@
   \tikzstyle{NobleGasFill} = [fill=green!45]
   \tikzstyle{LanthanideActinideFill} = [fill=red!15]
 
+  %% Set title
   \setkomafont{title}{\normalfont\huge\bfseries}
   \title{\vspace{-0.5cm}\doctitle}
   \subtitle{\docsubtitle}
   \date{}
 	\maketitle
 
+  %% Begin periodic table
   \begin{center}
-  \vspace{-2cm}
+  \vspace{-2cm} %% Bring up
   \begin{tikzpicture}[scale=0.67, transform shape]
 	
 	\tikzstyle{KeyBox} =  [draw=black, minimum width=2.4cm, minimum height=2.4cm, node distance=2.4cm, inner sep=0pt]
@@ -123,7 +95,6 @@
   \fi
 	
 	%% Group 1 - IA
-	%\node[name=Blank, Offsetter] {}; % this is just an invisible box that shoves the entire table downward to make it more centered
 	\node[name=H,	SBlock, Nonmetal] {\NaturalElementTextFormat{1}{1}{s}{1.00784--1.00811}{H}{\H}{2.20}};
 	\node[name=Li, 	below of=H, 	SBlock, AlkaliMetal] {\NaturalElementTextFormat{3}{2}{s}{6.938--6.997}{Li}{\Li}{0.98}};
 	\node[name=Na, 	below of=Li,	SBlock, AlkaliMetal] {\NaturalElementTextFormat{11}{3}{s}{22.98976928(2)}{Na}{\Na}{0.93}};
