@@ -38,7 +38,7 @@ To build files for a specific language you would have to run ```make fr```
 ### Add a new language
 1. Translations are placed in the ```languages.tex``` file. To add a new language, add to the file the Tex variables for your new language. You can take as example what was done for the first languages supported (ENGLISH, FRENCH, RUSSIAN).
 
-2. Also some tricks need to be done in ```Makefile``` so that you would be able to run ```make nl``` (```nl``` being the newly added language) to build your work to PDF. Here too you can take as example what is done is this file for other languages.
+2. Also some tricks need to be done in ```Makefile``` so that you would be able to run ```make nl``` (```nl``` being the newly added language) to build your work to PDF. Here too you can take as example what is done in this file for other languages.
 
 3. To finish you can edit the ```README.md``` file to show that a new language is supported.
 
