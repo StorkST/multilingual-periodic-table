@@ -30,16 +30,17 @@
 
 	\newcommand{\NaturalElementTextFormat}[7]
 	{
-    \begin{minipage}{2.21cm}
-			\centering
-      {\textbf{#1} \hfill \underline{{#7}} \hfill {#2}\textit{{#3}}}
-			\\[0.1cm]
-			{\Huge\textbf{{#5}}}
-			\linebreak
-			{\fontsize{9.5}{10.0}\selectfont{#6}}
-			\linebreak
-			{\small {#4}}
-		\end{minipage}
+    \begin{minipage}{22mm}%
+    \centering%
+    \par\noindent\parbox[t]{.333\textwidth}{\raggedright\textsf{#1}}%
+    \parbox[t]{.333\textwidth}{\centering\textsf{#7}}%
+    \parbox[t]{.333\textwidth}{\raggedleft \textsf{#2\textit{#3}}}\par%
+    \vspace*{0.5em}%
+    {\Huge\textbf{#5}}\\%
+    \vspace*{0.14em}%
+    \Large{#6}\\%
+    \small{#4}
+    \end{minipage}
 	}
 	
 	\tikzstyle{SBlock} = [fill=yellow!15]
@@ -114,8 +115,8 @@
 	%% Group 3 - IIIB
 	\node[name=Sc, 	right of=Ca, 	DBlock,  Metal] {\NaturalElementTextFormat{21}{3}{d}{44.955908(5)}{Sc}{\Sc}{1.36}};
 	\node[name=Y, 	below of=Sc, 	DBlock, Metal] {\NaturalElementTextFormat{39}{4}{d}{88.90584(2)}{Y}{\Y}{1.22}};
-	\node[name=LaLu, 	below of=Y, 	LanthanideActinide] {\NaturalElementTextFormat{57-71}{}{}{}{*}{\LaLu}{}};
-	\node[name=AcLr, 	below of=LaLu, 	LanthanideActinide] {\NaturalElementTextFormat{89-103}{}{}{}{**}{\AcLr}{}};
+	\node[name=LaLu, 	below of=Y, 	LanthanideActinide] {\NaturalElementTextFormat{}{}{}{}{*}{\LaLu}{}};
+	\node[name=AcLr, 	below of=LaLu, 	LanthanideActinide] {\NaturalElementTextFormat{}{}{}{}{**}{\AcLr}{}};
 	
 	%% Group 4 - IVB
 	\node[name=Ti, right of=Sc, DBlock, Metal] {\NaturalElementTextFormat{22}{3}{d}{47.867(1)}{Ti}{\Ti}{1.54}};
