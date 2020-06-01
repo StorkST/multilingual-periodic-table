@@ -72,7 +72,7 @@
 	\tikzstyle{Element} = [draw=black, minimum width=2.4cm, minimum height=2.4cm, node distance=2.4cm, inner sep=0pt]
   \tikzstyle{Offsetter} = [draw=white, minimum width=2.4cm, minimum height=2.4cm, node distance=2.4cm, inner sep=0pt]
 	\tikzstyle{TitleLabel} = [font={\Huge\bfseries}]
-	\tikzstyle{KeysLabel} = [minimum height = 2.5cm, inner sep=0pt, text width = 10cm]
+	\tikzstyle{KeysLabel} = [minimum height = 2.4cm, inner sep=0pt, text width = 7cm]
 	\tikzstyle{DetailsLabel} = [minimum height = 2.5cm, node distance = 2.5cm, inner sep=0pt]
 
   \ifextra
@@ -258,12 +258,15 @@
 	\node[name=DoubleStar, below of=Star, Offsetter] {{\textbf{\Huge **}}};
 
   %% Element descr
-	\node[name=Key, above of=Ti, Element, yshift=2.3cm] {\NaturalElementTextFormat{\Zkey}{\sskey}{}{\sawkey}{\Sykey}{\Namekey}{\enegkey}};
-	\node[above of=Mn, name=keyvalues, KeysLabel, yshift=3.8cm]{
-    \begin{minipage}{15cm}
-      \Zkey\ = \Zvalue; \enegkey\ = \enegvalue ; \sskey\ = \ssvalue; \\
-      \Sykey\ = \Syvalue; \Namekey\ = \Namevalue; \sawkey\ = \sawvalue
-    \end{minipage}
+	\node[name=Key, above of=Ti, Element, yshift=2.4cm] {\NaturalElementTextFormat{\Zkey}{\sskey}{}{\sawkey}{\Sykey}{\Namekey}{\enegkey}};
+  \node[name=keyvalues, above of=Cr, KeysLabel, xshift=0.4cm,yshift=3.8cm] { % For some reason the node doesn't display as expected when set with "right of=Key". That explains the hack with xshift and yshift.
+    \raggedright
+    \Zkey\Zvalue\\%
+    \enegkey\enegvalue\\%
+    \sskey\ssvalue\\%
+    \Sykey\Syvalue\\%
+    \Namekey\Namevalue\\%
+    \sawkey\sawvalue\\%
   };
 
   \ifextra
