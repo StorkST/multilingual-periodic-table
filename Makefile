@@ -9,9 +9,9 @@
 langs := en fr ru
 
 today := $(shell date +%Y/%m/%d)
-version_en := v1.0 - $(today)
-version_fr := v1.0 - $(today)
-version_ru := v1.0 - $(today)
+version_en := v1.0.1 - $(today)
+version_fr := v1.0.1 - $(today)
+version_ru := v1.0.1 - $(today)
 
 output_dir := output
 OUT_DIR := $(output_dir)
