@@ -8,17 +8,20 @@
 
 langs := en fr ru
 
-today := $(shell date +%Y/%m/%d)
-version_en := v1.0.1 - $(today)
-version_fr := v1.0.1 - $(today)
-version_ru := v1.0.1 - $(today)
+version := v1.0.1
+zip_stem := periodic-table-$(version).zip
 
-output_dir := output
-OUT_DIR := $(output_dir)
+today := $(shell date +%Y/%m/%d)
+version_en := $(version) - $(today)
+version_fr := $(version) - $(today)
+version_ru := $(version) - $(today)
+
+build_dir := build
+OUT_DIR := $(build_dir)
 
 # Ex: pdflatex -jobname=periodic_table "\def\target{fr} \def\withExtra{no} \input{languages.tex} \input{periodic_table.tex}"
 TEX = \
-	pdflatex -output-directory $(output_dir) -jobname=$(1) \
+	pdflatex -output-directory $(build_dir) -jobname=$(1) \
 	"\def\target{$(2)} \
 	\def\withExtra{$(3)} \
 	\def\refvar{$(1)} \
@@ -29,6 +32,9 @@ suffix_files := PeriodicTable.pdf PeriodicTable-extra.pdf
 
 files_lang = $(addprefix $(1)-,$(suffix_files))
 files_langs = $(foreach lang,$(1),$(call files_lang,$(lang)))
+
+zip_lang = $(addprefix $(1)-,$(zip_stem))
+zip_langs = $(foreach lang,$(1),$(call zip_lang,$(lang)))
 
 # Specific variables. Configuration of Latex template.
 
@@ -45,27 +51,31 @@ extra := no
 # MAIN: Rules to produce files
 .PHONY: all dir $(langs) $(lang_level)
 
-all: dir $(call files_langs,$(langs))
+# for some reason doesn't work, pdf files are not found in the zip command
+all: dir $(langs)
 
-# ex EN FR RU
+%-$(zip_stem):
+	$(MAKE) $(call files_lang,$(lang))
+	cd $(OUT_DIR) && zip -r -j $@ . -i $(OUT_DIR)/$(lang)*.pdf
+
+# ex: en fr ru
 $(langs): dir
-	$(MAKE) $(call files_langs,$@)
+	$(MAKE) $(call zip_langs,$@)
 
 %.pdf:
 	$(call TEX,$(basename $@),$(lang),$(extra),$(version))
-
 
 # Other rules
 
 $(OUT_DIR):
 	mkdir -p $(OUT_DIR)
 
-dir: $(OUT_DIR) # Create output directories
+dir: $(OUT_DIR) # Create build directories
 
 clean:
-	$(RM) -r $(output_dir)/*.aux
-	$(RM) -r $(output_dir)/*.log
+	$(RM) -r $(build_dir)/*.aux
+	$(RM) -r $(build_dir)/*.log
 
 veryclean:
-	$(RM) -r $(output_dir)/*
+	$(RM) -r $(build_dir)/*
 
