@@ -49,7 +49,7 @@ extra := no
 
 
 # MAIN: Rules to produce files
-.PHONY: all dir $(langs) $(lang_level)
+.PHONY: all dir $(langs) $(lang_level) release
 
 # for some reason doesn't work, pdf files are not found in the zip command
 all: dir $(langs)
@@ -66,6 +66,11 @@ $(langs): dir
 	$(call TEX,$(basename $@),$(lang),$(extra),$(version))
 
 # Other rules
+
+release:
+	hub release create $(version) -a "build/ru-periodic-table-$(version).zip#Russian periodic tables" -a "build/fr-periodic-table-$(version)#French periodic tables" -a "build/en-periodic-table-$(version)#English periodic tables" -m "Periodic tables $(version))
+
+	First release of 3 versions (french, english, russian) of the periodic table. Each table has 2 formats: the simpler has lighter elements categories; the more complete one is prefixed with '-extra'."
 
 $(OUT_DIR):
 	mkdir -p $(OUT_DIR)
