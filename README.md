@@ -2,8 +2,9 @@
 A printable Periodic table of element in multiple languages written in Tex / LaTeX.
 
 ## 1. Download
-All PDF files are in the ```output``` folder.
-Files are prefixed with the language of the table.
+PDF files of the periodic tables are availables [on GitHub, in the Releases category](https://github.com/StorkST/multilingual-periodic-table/releases/).
+
+You can also clone the project and build them with `make`.
 
 
 ## 2. Project
