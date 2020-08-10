@@ -1,4 +1,4 @@
-# Multilingual versions of the Periodic table of elements
+# Printable multilingual versions of the Periodic table of elements
 A printable Periodic table of element in multiple languages written in Tex / LaTeX.
 
 ## 1. Download
